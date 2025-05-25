@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Ligconsolata&display=swap" rel="stylesheet" />
+    <link href="/main.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="/v3_11.png" alt="Logo" class="logo-img" />
+            <div>
+                <div class="logo-title">IaC PLATFORM</div>
+                <div class="logo-subtitle">Ejecución de automatizaciones</div>
+            </div>
+        </div>
+        <div class="navbar-menu">
+            <span class="menu-item"><a href="/index.html">Inicio</a></span>
+            <span class="menu-item">Categorias</span>
+            <span class="menu-item">Programar ejecucion</span>
+            <span class="menu-item">Historial</span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="center-actions componente-movible">
+            <div class="action-card">
+                <img src="/v4_14.png" alt="Ejecutar" class="action-img" />
+                <div class="action-title">
+                    <a href="">Ejecutar automatizacion</a>
+                </div>
+            </div>
+            <div class="action-card">
+                <img src="/v4_11.png" alt="Estado" class="action-img" />
+                <div class="action-title">
+                    <a href="">Revisar estado de ejecucion</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-btn selected">
+                <img src="/v6_20.png" class="sidebar-icon" alt="Cliente" />
+                <span>Cliente</span>
+            </div>
+            <div class="sidebar-btn">
+                <img src="/v6_23.png" class="sidebar-icon" alt="Manuales" />
+                <span>Manuales usuario</span>
+            </div>
+            <div class="sidebar-btn">
+                <img src="/v6_18.png" class="sidebar-icon" alt="Configuración" />
+                <span>Configuracion</span>
+            </div>
+            <div class="sidebar-btn">
+                <img src="/v10_28.png" class="sidebar-icon" alt="Incidente" />
+                <span>Reportar incidente</span>
+            </div>
+            <div class="sidebar-btn">
+                <img src="/v6_25.png" class="sidebar-icon" alt="Cerrar sesión" />
+                <span>Cerrar sesion</span>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.querySelector('.sidebar-btn:last-child').addEventListener('click', function () {
+            window.location.href = 'login.html';
+        });
+        document.querySelector('.action-title a').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.querySelector('.center-actions.componente-movible').outerHTML = html;
+                    // Espera a que el DOM se actualice y luego agrega el evento al botón
+                    setTimeout(() => {
+                        const btn = document.querySelector('.ejecutar-auto');
+                        if (btn) {
+                            btn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                document.getElementById('modal-exito').classList.add('active');
+                            });
+                        }
+                        // Cerrar modal al hacer clic fuera
+                        const modal = document.getElementById('modal-exito');
+                        if (modal) {
+                            modal.addEventListener('click', function (ev) {
+                                if (ev.target === this) this.classList.remove('active');
+                            });
+                        }
+                    }, 100);
+                });
+        });
+    </script>
+</body>
+
+</html>

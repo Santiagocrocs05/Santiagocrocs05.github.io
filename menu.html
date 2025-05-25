@@ -1,0 +1,45 @@
+<!-- Componente de listas desplegables y botón -->
+<div class="form-ejecucion">
+    <div class="form-row">
+        <select class="form-select">
+            <option selected disabled>Cliente</option>
+            <option>Cliente 1</option>
+            <option>Cliente 2</option>
+        </select>
+        <select class="form-select">
+            <option selected disabled>Ambiente</option>
+            <option>Producción</option>
+            <option>Desarrollo</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <select class="form-select">
+            <option selected disabled>Medio de notificacion</option>
+            <option>Email</option>
+            <option>Slack</option>
+        </select>
+        <select class="form-select">
+            <option selected disabled>Automatizacion</option>
+            <option>Backup</option>
+            <option>Deploy</option>
+        </select>
+    </div>
+    <button class="form-btn ejecutar-auto">Ejecutar</button>
+</div>
+
+<!-- Ventana emergente de éxito -->
+<div id="modal-exito" class="modal-exito">
+    <div class="modal-contenido">
+        <div class="modal-mensaje">
+            EJECUCION EXITOSA, POR FAVOR REVISAR EL MEDIO DE<br>
+            NOTIFICACION SELECCIONADO PARA VER LOS RESULTADOS
+        </div>
+        <div class="modal-icono">
+            <svg width="90" height="90" viewBox="0 0 90 90">
+                <rect width="90" height="90" rx="16" fill="#6398F9" />
+                <polyline points="30,50 42,62 62,38" fill="none" stroke="#B3DAF7" stroke-width="6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+</div>

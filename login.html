@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login iac</title>
+    <link href="https://fonts.googleapis.com/css?family=Ligconsolata&display=swap" rel="stylesheet" />
+    <link href="/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="login-modal">
+        <span class="login-close">&times;</span>
+        <div class="login-avatar"></div>
+        <h2 class="login-title">Log in</h2>
+        <div class="login-signup">Don't have an account? <a href="#">Sign up</a></div>
+        <button class="login-btn login-aws">
+            <img src="/images/aws.png" alt="AWS" class="login-btn-icon">
+            Log in with AWS
+        </button>
+        <button class="login-btn login-microsoft">
+            <img src="/images/azure.png" alt="Microsoft" class="login-btn-icon">
+            Log in with Microsoft
+        </button>
+        <div class="login-or">
+            <span></span>
+            <b>OR</b>
+            <span></span>
+        </div>
+        <form>
+            <label class="login-label" for="email-input">Your email
+                <span class="login-hide"> <img src="/images/eye.svg" alt="Hide" class="login-eye"> Hide</span>
+            </label>
+            <input type="email" id="email-input" class="login-input" placeholder="" />
+            <label class="login-label" for="password-input">Your password
+                <span class="login-hide"> <img src="/images/eye.svg" alt="Hide" class="login-eye"> Hide</span>
+            </label>
+            <input type="password" id="password-input" class="login-input" placeholder="" />
+            <div class="login-forgot"><a href="#">Forget your password</a></div>
+            <button type="submit" class="login-submit">Log in</button>
+        </form>
+    </div>
+    <script>
+document.querySelector('.login-modal form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'index.html'; // Cambia por la ruta que desees
+});
+</script>
+</body>
+
+</html>
